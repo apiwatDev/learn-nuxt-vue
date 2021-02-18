@@ -1,4 +1,4 @@
-# section-3
+# Learn nuxt vue with udemy couse Nuxt.js - Vue.js on Steroids
 
 ## Build Setup
 
