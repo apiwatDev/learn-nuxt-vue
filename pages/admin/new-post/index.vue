@@ -12,21 +12,16 @@ import axios from "axios";
 export default {
   layout: "admin",
   components: {
-    AdminPostForm,
+    AdminPostForm
   },
   methods: {
     onSubmitted(postData) {
-      axios
-        .post(
-          "https://nuxt-blog-b1904-default-rtdb.firebaseio.com/posts.json",
-          postData
-        )
-        .then((result) => console.log(result))
-        .catch((e) => console.log(e));
-    },
-  },
+      this.$store.dispatch("addPost", postData).then(() => {
+        this.$router.push("/admin");
+      });
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>
