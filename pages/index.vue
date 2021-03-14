@@ -12,6 +12,7 @@
 <script>
 import PostPreview from "@/components/Posts/PostPreview";
 export default {
+  middleware: ['auth'],
   components: {
     PostPreview,
   },
