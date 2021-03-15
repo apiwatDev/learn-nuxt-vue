@@ -9,7 +9,9 @@ module.exports = {
     sourceType: "module"
   },
   plugins: ["vue"],
-  rules: {},
+  rules: {
+    "quotes": "double"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }

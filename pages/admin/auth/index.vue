@@ -40,6 +40,8 @@ export default {
         password: this.password
       }).then(()=>{
         this.$router.push('/admin')
+      }).catch((e)=>{
+        console.log(e)
       });
     }
   }

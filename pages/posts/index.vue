@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  middleware: ["auth"],
+  middleware: ["check-auth", "auth"],
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;

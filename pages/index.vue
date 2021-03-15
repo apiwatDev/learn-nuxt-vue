@@ -12,11 +12,10 @@
 <script>
 import PostPreview from "@/components/Posts/PostPreview";
 export default {
-  middleware: ['auth'],
   components: {
-    PostPreview,
+    PostPreview
   },
-   computed: {
+  computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;
     }
