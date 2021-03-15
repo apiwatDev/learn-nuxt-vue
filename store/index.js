@@ -112,7 +112,7 @@ const createStore = () => {
       },
       setLogoutTimer(vuexContext, duration) {
         setTimeout(() => {
-          vuexContext.commit("clearToken");
+          vuexContext.dispatch("logout");
         }, duration);
       },
       initAuth(vuexContext, req) {
@@ -150,6 +150,13 @@ const createStore = () => {
           "setLogoutTimer",
           +expirationDate - new Date().getTime()
         );
+      },
+      logout(vuexContext) {
+        vuexContext.commit("clearToken");
+        Cookie.remove("jwt");
+        Cookie.remove("expirationDate");
+        localStorage.removeItem("token");
+        localStorage.removeItem("tokenExpiration");
       }
     },
     getters: {
